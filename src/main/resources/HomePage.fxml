@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="583.0" prefWidth="837.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+    <children>
+        <Pane layoutX="-7.0" layoutY="-10.0" prefHeight="44.0" prefWidth="844.0" style="-fx-background-color: #FF0033;">
+         <children>
+              <ImageView fx:id="search" fitHeight="34.0" fitWidth="33.0" layoutX="545.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@icon/search.png" />
+                  </image>
+              </ImageView>
+            <Label layoutX="169.0" layoutY="11.0" text="Search :" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children></Pane>
+        <TextField fx:id="keyword" layoutX="225.0" layoutY="1.0" prefHeight="28.0" prefWidth="306.0" />
+        <ImageView fx:id="topRate1" fitHeight="128.0" fitWidth="150.0" layoutX="128.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="topRate2" fitHeight="128.0" fitWidth="150.0" layoutX="305.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="topRate3" fitHeight="128.0" fitWidth="150.0" layoutX="484.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="newMovie1" fitHeight="128.0" fitWidth="150.0" layoutX="130.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="newMovie2" fitHeight="128.0" fitWidth="150.0" layoutX="307.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="newMovie3" fitHeight="128.0" fitWidth="150.0" layoutX="486.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fitHeight="128.0" fitWidth="150.0" layoutX="660.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" />
+        <Pane layoutX="-1.0" layoutY="539.0" prefHeight="44.0" prefWidth="837.0" style="-fx-background-color: #FF0033;" />
+        <Pane layoutX="-3.0" prefHeight="583.0" prefWidth="94.0" style="-fx-background-color: #FF0033;">
+         <children>
+            <Button fx:id="action" layoutX="13.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Action" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="adventure" layoutX="12.0" layoutY="155.0" mnemonicParsing="false" style="-fx-background-color: #FF0033;" text="Adventure" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="comedy" layoutX="12.0" layoutY="215.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Comedy" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="drama" layoutX="12.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Drama" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="sciFi" layoutX="13.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Sci-fi" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="war" layoutX="13.0" layoutY="421.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="War" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="add" layoutY="23.0" mnemonicParsing="false" onAction="#addMovie" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #FF0033;" text="Add Movie" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children></Pane>
+      <Button fx:id="topRateMore" layoutX="727.0" layoutY="260.0" mnemonicParsing="false" onAction="#topRateMore" text="see more" underline="true" />
+      <Button fx:id="newMore" layoutX="727.0" layoutY="468.0" mnemonicParsing="false" onAction="#newMore" text="see more" underline="true" />
+    </children>
+</AnchorPane>
