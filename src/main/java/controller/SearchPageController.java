@@ -27,9 +27,9 @@ public class SearchPageController {
     @FXML private TextField keyword;
 
     public void initialize() {
-        picture.setCellValueFactory(new PropertyValueFactory<Movie, ImageView>("picture"));
+        picture.setCellValueFactory(new PropertyValueFactory<Movie, ImageView>("pic"));
         name.setCellValueFactory(new PropertyValueFactory<Movie, String>("name"));
-        type.setCellValueFactory(new PropertyValueFactory<Movie, String>("type"));
+        type.setCellValueFactory(new PropertyValueFactory<Movie, String>("genre"));
         rating.setCellValueFactory(new PropertyValueFactory<Movie, Double>("rating"));
 
         movieTableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -114,9 +114,10 @@ public class SearchPageController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        MovieController m = loader.getController();
-
+        SearchPageController s = loader.getController();
+        s.setMovies(MoviesDBConnector.getMovieByKeyword(name));
         stage.show();
+
     }
 
     private void goToSelectedMoviePage(Stage stage, Movie selectedMovie) {
@@ -143,8 +144,8 @@ public class SearchPageController {
         }
     }
 
-    public void setMovies(String keyword) {
-        movies = MoviesDBConnector.getMovieByKeyword(keyword);
+    public void setMovies(ObservableList<Movie> keyword) {
+        movies = keyword;
         movieTableView.setItems(movies);
     }
 }

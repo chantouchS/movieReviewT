@@ -27,7 +27,7 @@ public class CategoryPageController {
     @FXML private TextField keyword;
 
     public void initialize() {
-        picture.setCellValueFactory(new PropertyValueFactory<Movie, ImageView>("picture"));
+        picture.setCellValueFactory(new PropertyValueFactory<Movie, ImageView>("pic"));
         name.setCellValueFactory(new PropertyValueFactory<Movie, String>("name"));
         rating.setCellValueFactory(new PropertyValueFactory<Movie, Double>("rating"));
 

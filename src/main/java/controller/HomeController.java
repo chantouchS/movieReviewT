@@ -224,7 +224,7 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        CategoryPageController c = loader.getController();
+        SearchPageController c = loader.getController();
         c.setMovies(MoviesDBConnector.getTopRating());
         stage.show();
     }
@@ -237,7 +237,7 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        CategoryPageController c = loader.getController();
+        SearchPageController c = loader.getController();
         c.setMovies(MoviesDBConnector.getNewMovies());
         stage.show();
     }
@@ -250,7 +250,7 @@ public class HomeController {
             e.printStackTrace();
         }
         SearchPageController s = loader.getController();
-        s.setMovies(keyword);
+        s.setMovies(MoviesDBConnector.getMovieByKeyword(keyword));
         stage.show();
     }
 

@@ -124,7 +124,7 @@ public class AddNewMoviePageController {
             e.printStackTrace();
         }
         SearchPageController s = loader.getController();
-        s.setMovies(name);
+        s.setMovies(MoviesDBConnector.getMovieByKeyword(name));
         stage.show();
     }
 
