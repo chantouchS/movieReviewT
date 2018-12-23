@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchPageController">
+   <children>
+      <TableView fx:id="movieTableView" layoutX="161.0" layoutY="66.0" prefHeight="355.0" prefWidth="401.0">
+        <columns>
+          <TableColumn fx:id="picture" prefWidth="93.60003662109375" text="Picture" />
+          <TableColumn fx:id="name" prefWidth="165.59999084472656" text="Name" />
+            <TableColumn fx:id="type" prefWidth="69.60003662109375" text="Type" />
+            <TableColumn fx:id="rating" prefWidth="71.199951171875" text="Rating" />
+        </columns>
+      </TableView>
+      <Pane layoutX="-3.0" prefHeight="44.0" prefWidth="707.0" style="-fx-background-color: #FF0033;">
+         <children>
+            <ImageView fx:id="search" fitHeight="34.0" fitWidth="33.0" layoutX="537.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon/search.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="157.0" layoutY="9.0" text="Search :" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="keyword" layoutX="221.0" layoutY="8.0" prefHeight="28.0" prefWidth="306.0" />
+         </children>
+      </Pane>
+      <Pane prefHeight="488.0" prefWidth="94.0" style="-fx-background-color: #FF0033;">
+         <children>
+            <Button fx:id="action" layoutX="13.0" layoutY="65.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Action" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="adventure" layoutX="12.0" layoutY="124.0" mnemonicParsing="false" style="-fx-background-color: #FF0033;" text="Adventure" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="comedy" layoutX="12.0" layoutY="184.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Comedy" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="drama" layoutX="12.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Drama" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="sciFi" layoutX="13.0" layoutY="319.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Sci-fi" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="war" layoutX="13.0" layoutY="384.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="War" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="home" fitHeight="34.0" fitWidth="33.0" layoutX="31.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon/Home.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

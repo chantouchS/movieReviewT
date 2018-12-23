@@ -6,10 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -22,6 +19,7 @@ import java.io.IOException;
 
 
 public class AddNewMoviePageController {
+    private File file;
     @FXML private Button sciFi, action, comedy, drama, adventure, war;
     @FXML private TextField title;
     @FXML private TextArea description, review;
@@ -103,16 +101,23 @@ public class AddNewMoviePageController {
         String tmpTitle = title.getText();
         String tmpDes = description.getText();
         String tmpReview = review.getText();
-        String url = upload.getImage().toString();
         String genre = genres.getValue();
         String r = score.getValue();
-        if (!tmpTitle.equals("") && !tmpDes.equals("") && !tmpReview.equals("") && !url.equals("") && !genre.equals("") && !r.equals("")) {
-            MoviesDBConnector.add(new Movie(url, genre, tmpTitle, tmpReview, tmpDes, Double.valueOf(r), Integer.valueOf(r), 1));
+        if (!tmpTitle.equals("") && !tmpDes.equals("") && !tmpReview.equals("") && !file.equals("") && !genre.equals("") && !r.equals("")) {
+            MoviesDBConnector.add(new Movie(file.getName(), genre, tmpTitle, tmpReview, tmpDes, Double.valueOf(r), Integer.valueOf(r), 1));
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Movie Review");
+            alert.setHeaderText(null);
+            alert.setContentText("Add complete");
+            alert.showAndWait();
+            title.setText("");
+            description.setText("");
+            review.setText("");
         }
     }
 
     public void search(Stage stage, String name) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CategoryPage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SearchPage.fxml"));
         try {
             stage.setScene(new Scene(loader.load()));
         } catch (IOException e) {
@@ -126,7 +131,7 @@ public class AddNewMoviePageController {
 
     private void selectedGenre(Stage stage, String genre) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SearchPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CategoryPage.fxml"));
             stage.setScene(new Scene(loader.load()));
             CategoryPageController c = loader.getController();
             c.setMovies(MoviesDBConnector.getMoviesByGenre(genre));
@@ -140,10 +145,9 @@ public class AddNewMoviePageController {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose your picture");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Choose only \".png\" file", "*.png"));
-        File file = fileChooser.showOpenDialog(upload.getScene().getWindow());
+                new FileChooser.ExtensionFilter("Choose \".png\" and \".jpg\" file", "*.png", "*.jpg"));
+        file = fileChooser.showOpenDialog(upload.getScene().getWindow());
 
-        System.out.println(file.getName());
         upload.setImage(new Image("/image/" + file.getName()));
     }
 }

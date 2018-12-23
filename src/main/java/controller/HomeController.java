@@ -279,9 +279,8 @@ public class HomeController {
     }
 
     private void setUpImage(ObservableList<ImageView> tmp, ObservableList<Movie> tmpDB) {
-        int i = 0;
-        for (ImageView imageView : tmp) {
-            imageView.setImage(new Image("/image/"+tmpDB.get(i++).getPicture()));
+        for (int i = 0; i < tmpDB.size(); i++) {
+            tmp.get(i).setImage(new Image("/image/"+tmpDB.get(i).getPicture()));
         }
     }
 
