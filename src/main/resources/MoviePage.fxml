@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MovieController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MovieController">
    <children>
       <Pane prefHeight="44.0" prefWidth="844.0" style="-fx-background-color: #FF0033;">
          <children>
@@ -28,12 +28,12 @@
          </children>
       </Pane>
       <ImageView fx:id="picture" fitHeight="223.0" fitWidth="234.0" layoutX="101.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="540.0" layoutY="93.0" text="Story" textFill="#c72222">
+      <Label layoutX="377.0" layoutY="98.0" text="Story" textFill="#c72222">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title" layoutX="289.0" layoutY="73.0" prefHeight="34.0" prefWidth="246.0" />
+      <Label fx:id="title" alignment="TOP_LEFT" layoutX="101.0" layoutY="90.0" prefHeight="34.0" prefWidth="246.0" textFill="#c72222" />
       <Pane layoutY="1.0" prefHeight="583.0" prefWidth="94.0" style="-fx-background-color: #FF0033;">
          <children>
             <Button fx:id="action" layoutX="13.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Action" textFill="WHITE">
@@ -78,10 +78,15 @@
             <Image url="@icon/search.png" />
          </image>
       </ImageView>
-      <Label fx:id="description" layoutX="375.0" layoutY="124.0" prefHeight="160.0" prefWidth="441.0" />
+      <Label fx:id="description" alignment="TOP_LEFT" layoutX="375.0" layoutY="124.0" prefHeight="160.0" prefWidth="441.0" textFill="#c72222" />
       <ChoiceBox fx:id="score" layoutX="546.0" layoutY="509.0" prefHeight="26.0" prefWidth="94.0" />
-      <Button fx:id="rate" layoutX="640.0" layoutY="510.0" mnemonicParsing="false" onAction="#rateMovie" text="Rate" />
-      <Label fx:id="rating" layoutX="714.0" layoutY="99.0" prefHeight="26.0" prefWidth="75.0" />
-      <Label fx:id="review" layoutX="375.0" layoutY="284.0" prefHeight="160.0" prefWidth="441.0" />
+      <Button fx:id="rate" layoutX="640.0" layoutY="510.0" mnemonicParsing="false" onAction="#rateMovie" style="-fx-background-color: #c72222;" text="Rate" textFill="WHITE" />
+      <Label fx:id="rating" layoutX="714.0" layoutY="99.0" prefHeight="26.0" prefWidth="75.0" textFill="#c72222" />
+      <Label fx:id="review" alignment="TOP_LEFT" layoutX="375.0" layoutY="284.0" prefHeight="160.0" prefWidth="441.0" textFill="#c72222" />
+      <Label layoutX="664.0" layoutY="98.0" text="Rate" textFill="#c72222">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

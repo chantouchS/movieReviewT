@@ -30,7 +30,7 @@ public class AddNewMoviePageController {
 
     public void initialize() {
         score.getItems().addAll("1", "2", "3", "4", "5");
-        genres.getItems().addAll("Action", "Adventure", "Comedy", "Drama", "Sci-fi", "War");
+        genres.getItems().addAll("action", "adventure", "comedy", "drama", "sci-fi", "war");
 
         home.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -116,6 +116,7 @@ public class AddNewMoviePageController {
         }
     }
 
+
     public void search(Stage stage, String name) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/SearchPage.fxml"));
         try {
@@ -127,7 +128,6 @@ public class AddNewMoviePageController {
         s.setMovies(MoviesDBConnector.getMovieByKeyword(name));
         stage.show();
     }
-
 
     private void selectedGenre(Stage stage, String genre) {
         try {

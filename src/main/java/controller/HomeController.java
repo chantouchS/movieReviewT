@@ -242,18 +242,6 @@ public class HomeController {
         stage.show();
     }
 
-    public void search(Stage stage, String keyword) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CategoryPage.fxml"));
-        try {
-            stage.setScene(new Scene(loader.load()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        SearchPageController s = loader.getController();
-        s.setMovies(MoviesDBConnector.getMovieByKeyword(keyword));
-        stage.show();
-    }
-
     private void goToSelectedMoviePage(Stage stage, Movie selectedMovie) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/MoviePage.fxml"));
@@ -266,9 +254,21 @@ public class HomeController {
         }
     }
 
+    public void search(Stage stage, String keyword) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SearchPage.fxml"));
+        try {
+            stage.setScene(new Scene(loader.load()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        SearchPageController s = loader.getController();
+        s.setMovies(MoviesDBConnector.getMovieByKeyword(keyword));
+        stage.show();
+    }
+
     private void selectedGenre(Stage stage, String genre) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SearchPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CategoryPage.fxml"));
             stage.setScene(new Scene(loader.load()));
             CategoryPageController c = loader.getController();
             c.setMovies(MoviesDBConnector.getMoviesByGenre(genre));
@@ -279,7 +279,7 @@ public class HomeController {
     }
 
     private void setUpImage(ObservableList<ImageView> tmp, ObservableList<Movie> tmpDB) {
-        for (int i = 0; i < tmpDB.size(); i++) {
+        for (int i = 0; i < tmpDB.size() && i < tmp.size(); i++) {
             tmp.get(i).setImage(new Image("/image/"+tmpDB.get(i).getPicture()));
         }
     }

@@ -106,17 +106,6 @@ public class CategoryPageController {
         });
     }
 
-    public void search(Stage stage, String name) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CategoryPage.fxml"));
-        try {
-            stage.setScene(new Scene(loader.load()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        stage.show();
-    }
-
     private void goToSelectedMoviePage(Stage stage, Movie selectedMovie) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/MoviePage.fxml"));
@@ -129,9 +118,21 @@ public class CategoryPageController {
         }
     }
 
+    public void search(Stage stage, String keyword) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SearchPage.fxml"));
+        try {
+            stage.setScene(new Scene(loader.load()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        SearchPageController s = loader.getController();
+        s.setMovies(MoviesDBConnector.getMovieByKeyword(keyword));
+        stage.show();
+    }
+
     private void selectedGenre(Stage stage, String genre) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SearchPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CategoryPage.fxml"));
             stage.setScene(new Scene(loader.load()));
             CategoryPageController c = loader.getController();
             c.setMovies(MoviesDBConnector.getMoviesByGenre(genre));

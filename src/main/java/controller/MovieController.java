@@ -96,21 +96,21 @@ public class MovieController {
         });
     }
 
-    public void search(Stage stage, String name) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CategoryPage.fxml"));
+    public void search(Stage stage, String keyword) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SearchPage.fxml"));
         try {
             stage.setScene(new Scene(loader.load()));
         } catch (IOException e) {
             e.printStackTrace();
         }
         SearchPageController s = loader.getController();
-        s.setMovies(MoviesDBConnector.getMovieByKeyword(name));
+        s.setMovies(MoviesDBConnector.getMovieByKeyword(keyword));
         stage.show();
     }
 
     private void selectedGenre(Stage stage, String genre) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SearchPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CategoryPage.fxml"));
             stage.setScene(new Scene(loader.load()));
             CategoryPageController c = loader.getController();
             c.setMovies(MoviesDBConnector.getMoviesByGenre(genre));

@@ -29,12 +29,15 @@
          </children>
       </Pane>
       <ImageView fx:id="upload" fitHeight="223.0" fitWidth="234.0" layoutX="101.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="540.0" layoutY="93.0" text="Story" textFill="#c72222">
+      <Label layoutX="439.0" layoutY="97.0" text="Story" textFill="#c72222">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="282.0" layoutY="76.0" prefHeight="34.0" prefWidth="33.0" text="ชื่อหนัง" />
+      <Label layoutX="120.0" layoutY="85.0" prefHeight="34.0" prefWidth="58.0" text="Name" textFill="#c72222">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
       <Pane layoutY="1.0" prefHeight="583.0" prefWidth="94.0" style="-fx-background-color: #FF0033;">
          <children>
             <Button fx:id="action" layoutX="13.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF0033;" text="Action" textFill="WHITE">
@@ -80,13 +83,16 @@
          </image>
       </ImageView>
       <ChoiceBox fx:id="score" layoutX="588.0" layoutY="504.0" prefHeight="26.0" prefWidth="94.0" />
-      <TextField fx:id="title" layoutX="324.0" layoutY="78.0" />
+      <TextField fx:id="title" layoutX="179.0" layoutY="89.0" />
       <TextArea fx:id="description" layoutX="439.0" layoutY="124.0" prefHeight="115.0" prefWidth="342.0" />
       <Button fx:id="loadPictureBtn" layoutX="253.0" layoutY="347.0" mnemonicParsing="false" onAction="#loadPicture" text="Load Picture" />
       <TextArea fx:id="review" layoutX="439.0" layoutY="257.0" prefHeight="115.0" prefWidth="342.0" />
       <Button fx:id="save" layoutX="729.0" layoutY="504.0" mnemonicParsing="false" onAction="#saveNewMovie" text="Save" />
       <Label layoutX="533.0" layoutY="505.0" prefHeight="25.0" prefWidth="48.0" text="Rating" />
       <ChoiceBox fx:id="genres" layoutX="675.0" layoutY="76.0" prefWidth="150.0" />
-      <Label layoutX="595.0" layoutY="76.0" prefHeight="26.0" prefWidth="71.0" text="Category" />
+      <Label layoutX="584.0" layoutY="76.0" prefHeight="28.0" prefWidth="82.0" text="Category" textFill="#c72222">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
    </children>
 </AnchorPane>

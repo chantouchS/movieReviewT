@@ -71,7 +71,17 @@
                </font>
             </Button>
          </children></Pane>
-      <Button fx:id="topRateMore" layoutX="727.0" layoutY="260.0" mnemonicParsing="false" onAction="#topRateMore" text="see more" underline="true" />
-      <Button fx:id="newMore" layoutX="727.0" layoutY="468.0" mnemonicParsing="false" onAction="#newMore" text="see more" underline="true" />
+      <Button fx:id="topRateMore" layoutX="727.0" layoutY="260.0" mnemonicParsing="false" onAction="#topRateMore" style="-fx-background-color: #c72222;" text="see more" textFill="WHITE" underline="true" />
+      <Button fx:id="newMore" layoutX="727.0" layoutY="468.0" mnemonicParsing="false" onAction="#newMore" style="-fx-background-color: #c72222;" text="see more" textFill="WHITE" underline="true" />
+      <Label layoutX="132.0" layoutY="63.0" text="Top Rate" textFill="#c72222">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="292.0" prefHeight="28.0" prefWidth="58.0" text="New" textFill="#c72222">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

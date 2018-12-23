@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CategoryPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CategoryPageController">
    <children>
       <TableView fx:id="movieTableView" layoutX="198.0" layoutY="77.0" prefHeight="355.0" prefWidth="333.0">
          <columns>
@@ -22,12 +22,12 @@
       </TableView>
       <Pane layoutX="-3.0" prefHeight="44.0" prefWidth="707.0" style="-fx-background-color: #FF0033;">
          <children>
-            <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="537.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="search" fitHeight="34.0" fitWidth="33.0" layoutX="537.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icon/search.png" />
                </image>
             </ImageView>
-            <Label fx:id="search" layoutX="157.0" layoutY="9.0" text="Search :" textFill="WHITE">
+            <Label layoutX="157.0" layoutY="9.0" text="Search :" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
